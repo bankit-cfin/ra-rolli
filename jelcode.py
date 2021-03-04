@@ -48,11 +48,6 @@ def build_dataset(filename = "data/data.xlsx", sheet = "Stata"):
     
     # converto tutti i jelcodes in maiuscolo
     d1["jelcode"] = d1.jelcode.str.upper()
-    # metto le colonne con i jelcodes a 1/2/3 caratteri
-    for level in range(1, 3 + 1):
-        nome = "j" + str(level)
-        d1[nome] = d1.jelcode.str[0:level]
-
 
     return d1
 
@@ -76,18 +71,17 @@ default_categories = {
     "Consumo, risparmio, redditi, ricchezza": ["D1", "D2" ,"D3", "D4", "D5", "D7", "D8", "E1", "E2"],
     "Politica fiscale": ["E6", "H"],
     "Economia industriale" : ["K", "L"],
-    "Educazione, salute, sviluppo, storia": ["O", "I", "N"],
-    "Residui: economia regionale, energia, mercato immobiliare": ["Q", "R", "Y", "Z", "P", "D9", "A" ,"B"]
+    "Istruzione, salute, sviluppo economico, storia": ["O", "I", "N"],
+    "Residui: economia regionale, energia e ambiente, mercato immobiliare": ["Q", "R", "Y", "Z", "P", "D9", "A" ,"B"]
 }
 
 
 def dataset(anni, d = build_dataset(), categories=default_categories):
     # filtro gli anni
-    d = d[d.pub_date.isin(anni)]
+    d = d[d.pub_date.isin(anni)].copy()
     totale = d.weight.sum()
-    d["percentuale"] = d.weight / totale
+    d["percentuale"] = pd.Series(d.weight / totale, index=d.index)
 
-    
     cat_column = []
     jelcodes_column = []
     percentuale_column = []
