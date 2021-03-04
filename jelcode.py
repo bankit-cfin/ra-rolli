@@ -3,9 +3,12 @@
 import pandas as pd
 import numpy as np
 
-x = pd.read_excel("PubEst_2020_backup.xlsx", "Stata")
-x.columns = ["pub_date", "pub_type", "JEL_co_1", "JEL_co_2",
-             "JEL_co_3", "JEL_co_4", "JEL_co_5", "JEL_co_6", "JEL_co_7"]
+x = pd.read_excel("data/data.xlsx", "Stata")
+x.columns = [
+    "pub_date", "pub_type", "JEL_co_1", "JEL_co_2",
+    "JEL_co_3", "JEL_co_4", "JEL_co_5", "JEL_co_6", 
+    "JEL_co_7"
+]
 
 # rimuovo gli NA generati dalla celle vuote di read_excel        
 x.fillna('', inplace=True)
@@ -26,9 +29,11 @@ for i in range(1, 8):
 
 # genero la colonna
 
+jelcodes_array = ["JEL_co_1", "JEL_co_2", "JEL_co_3", "JEL_co_4", "JEL_co_5", "JEL_co_6", "JEL_co_7"]
+
 x = x.replace("", np.NaN)
-x["jel_count"] = x.apply(lambda y: 7-y[["JEL_co_1", "JEL_co_2", "JEL_co_3", "JEL_co_4", "JEL_co_5", "JEL_co_6", "JEL_co_7"]].isnull().sum(), axis="columns")
-x["wei_ght"] = x.apply(lambda y: 1./(7-y[["JEL_co_1", "JEL_co_2", "JEL_co_3", "JEL_co_4", "JEL_co_5", "JEL_co_6", "JEL_co_7"]].isnull().sum()), axis="columns")
+x["jel_count"] = x.apply(lambda y: 7-y[jelcodes_array].isnull().sum(), axis="columns")
+x["wei_ght"] = x.apply(lambda y: 1./y.jel_count, axis="columns")
 
 d1 = x[["pub_date", "JEL_co_1", "wei_ght"]]
 d1.columns = ["pub_date", "jelcode", "weight"]
@@ -40,5 +45,9 @@ for i in range(2, 8):
     d1 = d1.append(d2)
     
 d1 = d1[~d1.jelcode.isnull()]
-d1["j1"] = d1.jelcode.apply(lambda y: y[0])
- 
+
+
+for level in range(1, 3 + 1):
+    nome = "j" + str(level)
+    d1[nome] = d1.jelcode.str[0:level]
+

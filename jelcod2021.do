@@ -1,7 +1,6 @@
 clear all
-// cd D:\Dati\Profili\m030433\Desktop\RA_Rolli
 
-import_excel pub_date pub_type JEL_co_1 JEL_co_2 JEL_co_3 JEL_co_4 JEL_co_5 JEL_co_6 JEL_co_7 using PubEst_2020, sheet(Stata)
+import_excel pub_date pub_type JEL_co_1 JEL_co_2 JEL_co_3 JEL_co_4 JEL_co_5 JEL_co_6 JEL_co_7 using data/data, sheet(Stata)
 
 
 keep if pub_date>"2015"
