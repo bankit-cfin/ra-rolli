@@ -9,7 +9,7 @@ Politica fiscale,"E6, H",0.07621722846441946,2020
 Economia industriale,"K, L",0.055430711610486884,2020
 "Istruzione, salute, sviluppo economico, storia","O, I, N",0.06554307116104868,2020
 "Residui: economia regionale, energia e ambiente, mercato immobiliare","Q, R, Y, Z, P, D9, A, B",0.049625468164794004,2020
-Residui non considerati,"D03, E01",0.007490636704119849,2020
+Residui non considerati,"E01, D03",0.007490636704119849,2020
 Mercati finanziari e banche,G,0.16038707880813144,2017-2018-2019
 "Economia internazionale, commercio, cambi",F,0.07200640490114174,2017-2018-2019
 "Politica monetaria, prezzi, ciclo economico","E3, E4, E5",0.12993595098858257,2017-2018-2019
@@ -20,4 +20,4 @@ Politica fiscale,"E6, H",0.07468671679197994,2017-2018-2019
 Economia industriale,"K, L",0.04809941520467836,2017-2018-2019
 "Istruzione, salute, sviluppo economico, storia","O, I, N",0.10394736842105261,2017-2018-2019
 "Residui: economia regionale, energia e ambiente, mercato immobiliare","Q, R, Y, Z, P, D9, A, B",0.09770955165692008,2017-2018-2019
-Residui non considerati,"E71, E00",0.0011695906432748538,2017-2018-2019
+Residui non considerati,"E00, E71",0.0011695906432748538,2017-2018-2019
