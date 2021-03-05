@@ -19,14 +19,17 @@ def build_dataset(filename = "data/data.xlsx", sheet = "Stata"):
     x = x[x.pub_date != "Forthcoming"]
     x = x[x.pub_date > 2015]
     x = x[x.pub_type != "Editor's Introduction"]
-    # x = x[x.pub_date <= anno ]
     x = x[x.pub_date != ""]
 
     for i in range(1, 7 + 1):
         src_name = "JEL_co_" + str(i)
         x[src_name] = x[src_name].apply(lambda y: y.strip())
 
-    jelcodes_array = ["JEL_co_1", "JEL_co_2", "JEL_co_3", "JEL_co_4", "JEL_co_5", "JEL_co_6", "JEL_co_7"]
+    jelcodes_array = [
+        "JEL_co_1", "JEL_co_2", "JEL_co_3", 
+        "JEL_co_4", "JEL_co_5", "JEL_co_6", 
+        "JEL_co_7"
+    ]
 
     # mi sono utili i NaN...
     x = x.replace("", np.NaN)
@@ -77,6 +80,7 @@ default_categories = {
 
 
 def dataset(anni, d = build_dataset(), categories=default_categories):
+    """Costruisce il dataset utile per il grafico"""
     # filtro gli anni
     d = d[d.pub_date.isin(anni)].copy()
     totale = d.weight.sum()
@@ -108,7 +112,11 @@ def dataset(anni, d = build_dataset(), categories=default_categories):
     jelcodes_column.append(", ".join(jelcode_residui))
     percentuale_column.append(d[d.jelcode.isin(jelcode_residui)].percentuale.sum())
 
-    return pd.DataFrame({ "Categoria": cat_column, "jelcodes": jelcodes_column, "percentuale": percentuale_column})
+    return pd.DataFrame({ 
+        "Categoria": cat_column,
+        "jelcodes": jelcodes_column,
+        "percentuale": percentuale_column
+    })
 
 
 
