@@ -1,0 +1,23 @@
+Categoria,jelcodes,percentuale,anni
+Mercati finanziari e banche,G,0.17100053504547885,2020
+"Economia internazionale, commercio, cambi",F,0.11771000535045477,2020
+"Politica monetaria, prezzi, ciclo economico","E3, E4, E5",0.15658105939004816,2020
+"Econometria, metodi matematici",C,0.10692883895131086,2020
+"Mercato del lavoro, salari, innovazione","D6, J, M",0.0852059925093633,2020
+"Consumo, risparmio, redditi, ricchezza","D1, D2, D3, D4, D5, D7, D8, E1, E2",0.10826645264847512,2020
+Politica fiscale,"E6, H",0.07621722846441946,2020
+Economia industriale,"K, L",0.055430711610486884,2020
+"Istruzione, salute, sviluppo economico, storia","O, I, N",0.06554307116104868,2020
+"Residui: economia regionale, energia e ambiente, mercato immobiliare","Q, R, Y, Z, P, D9, A, B",0.049625468164794004,2020
+Residui non considerati,"E01, D03",0.007490636704119849,2020
+Mercati finanziari e banche,G,0.16038707880813144,2017-2018-2019
+"Economia internazionale, commercio, cambi",F,0.07200640490114174,2017-2018-2019
+"Politica monetaria, prezzi, ciclo economico","E3, E4, E5",0.12993595098858257,2017-2018-2019
+"Econometria, metodi matematici",C,0.10244360902255639,2017-2018-2019
+"Mercato del lavoro, salari, innovazione","D6, J, M",0.1023879142300195,2017-2018-2019
+"Consumo, risparmio, redditi, ricchezza","D1, D2, D3, D4, D5, D7, D8, E1, E2",0.10722639933166249,2017-2018-2019
+Politica fiscale,"E6, H",0.07468671679197994,2017-2018-2019
+Economia industriale,"K, L",0.04809941520467836,2017-2018-2019
+"Istruzione, salute, sviluppo economico, storia","O, I, N",0.10394736842105261,2017-2018-2019
+"Residui: economia regionale, energia e ambiente, mercato immobiliare","Q, R, Y, Z, P, D9, A, B",0.09770955165692008,2017-2018-2019
+Residui non considerati,"E00, E71",0.0011695906432748538,2017-2018-2019
