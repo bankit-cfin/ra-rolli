@@ -75,7 +75,7 @@ default_categories = {
     "Politica fiscale": ["E6", "H"],
     "Economia industriale" : ["K", "L"],
     "Istruzione, salute, sviluppo economico, storia": ["O", "I", "N"],
-    "Residui: economia regionale, energia e ambiente, mercato immobiliare": ["Q", "R", "Y", "Z", "P", "D9", "A" ,"B"]
+    "Energia e ambiente, Economia regionale e mercato immobiliare: ["Q", "R"]
 }
 
 
